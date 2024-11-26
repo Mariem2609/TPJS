@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 10</title>
+</head>
+<body>
+    <script>
+       
+let jour=prompt("entrer le jour");
+let moi=prompt("ecrivez le moi");
+let annee=prompt("ecrivez l'annee");
+let date= alert( "La date :"+jour+"/"+moi+"/"+annee);
+
+    </script>
+</body>
+</html>
+
+function calculMoyenne() {
+          
+    const notesInput = document.getElementById('note').value;
+     if (notesInput.trim() === '') {
+        alert('entrer vos note :');
+        return;
+    }
+    const notesArray = notesInput.split(',').map(note => parseFloat(note));
+   const total = notesArray.reduce((sum, note) => sum + note, 0);
+    const average = total / notesArray.length;
+    const moyenneField = document.getElementById('moyenne');
+    moyenneField.value = average.toFixed(2); 
+}

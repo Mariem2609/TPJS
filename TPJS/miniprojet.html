@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Moyenne</title>
+  
+</head>
+    <body>
+        <h1>Calcule du Moyenne :</h1>
+<form id="entrer_du_note">
+    <label for="note">Entrer vos notes :</label>
+    <br>
+    <br>
+    <input type="text" id="note" placeholder>
+    <br>
+    <br>
+    <button type="button" onclick="calculMoyenne()">calculer</button>
+    <br>
+    <br>
+    <label for="resultat">Moyenne general :</label>
+    <br>
+    <br>
+    <input type="number" id="moyenne" placeholder>
+
+</form>
+
+<style>
+    h1{
+        font-family: 'Times New Roman';
+    }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: lightblue;
+}
+form{
+    margin-bottom: 20px;
+    margin-top: 40px; 
+}
+input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+button{
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+.result{
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+</style>
+<script>
+    function calculMoyenne() {
+          
+          const notesInput = document.getElementById('note').value;
+           if (notesInput.trim() === '') {
+              alert('entrer vos note :');
+              return;
+          }
+          const notesArray = notesInput.split(',').map(note => parseFloat(note));
+         const total = notesArray.reduce((sum, note) => sum + note, 0);
+          const average = total / notesArray.length;
+          const moyenneField = document.getElementById('moyenne');
+          moyenneField.value = average.toFixed(2); 
+      }
+      
+</script>
+</head>
+    </body>
+  
+</html>
